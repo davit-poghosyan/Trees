@@ -206,7 +206,7 @@ Node<T>* BST<T>::getPredecessor(Node<T>* node) const
         Node<T>* predescessor = nullptr;
         Node<T>* ancestor = root;
 
-        while (ancestor != node) {
+        while (ancestor) {
             if (ancestor->getVal() < node->getVal()) {
                 predescessor = ancestor;
                 ancestor = ancestor->getRightChild();
@@ -232,7 +232,7 @@ Node<T>* BST<T>::getSuccessor(Node<T>* node) const
         Node<T>* successor = nullptr;
         Node<T>* ancestor = root;
 
-        while (ancestor->getVal() != node->getVal()) {
+        while (ancestor) {
             if (ancestor->getVal() > node->getVal()) {
                 successor = ancestor;
                 ancestor = ancestor->getLeftChild();
